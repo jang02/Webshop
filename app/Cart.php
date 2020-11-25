@@ -44,7 +44,8 @@ class cart
         $this->saveSession();
     }
 
-    public function saveSession(): void {
+    public function saveSession(): void
+    {
         Session::put("cart", $this->serialize());
     }
 
@@ -53,7 +54,13 @@ class cart
         return $this->items;
     }
 
-    public function clearCart(){
+    public function getItemAmount($productid): int
+    {
+        return $this->items[$productid];
+    }
+
+    public function clearCart()
+    {
         $this->items = [];
     }
 

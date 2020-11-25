@@ -11,6 +11,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.6/cropper.min.js" type="text/javascript"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,8 +24,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/loading_bar.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    {{-- Loading bar --}}
+    <div class="overlay"></div>
+    <div class="spanner">
+        <div class="loader"></div>
+    </div>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -72,9 +87,48 @@
             </div>
         </nav>
 
+
+
         <main class="py-4">
+            <div id="container">
+
+
+            <div class="wrapper">
+                <!-- Sidebar -->
+                @if(Auth::check())
+                    <nav id="sidebar">
+                        <div class="sidebar-header">
+                            <h3>Sidebar</h3>
+                        </div>
+
+                        <ul class="list-unstyled components">
+                            @if(Auth::check())
+                                @if (Auth::user()->isAdmin())
+                                    <li><a href="{{route("adminpanel")}}">Admin Panel</a></li>
+                                @endif
+                            @endif
+
+                            <li><a href="{{route("show-cart")}}">Cart</a></li>
+                            <li><a href="">Order lijst</a></li>
+
+                            <li class="active">
+                                <a href="#categoriesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categorieën</a>
+                                <ul class="collapse list-unstyled" id="categoriesSubmenu">
+                                    @foreach(\App\Category::all() as $menuCategory)
+                                        <li>
+                                            <a href="{{route("show-category", $menuCategory)}}">{{$menuCategory->label}}</a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+            @endif
+            </div>
             @yield('content')
+            </div>
         </main>
     </div>
+@stack("js")
 </body>
 </html>

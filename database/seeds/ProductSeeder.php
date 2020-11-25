@@ -111,7 +111,18 @@ class ProductSeeder extends Seeder
         DB::table('products')->insert([
             'name' => "asus",
             'label' => "Asus ROG STRIX B450-F GAMING moederbord",
-            'description' => "Default desc",
+            'description' => "{
+                \"Merk\": \"Asus\"
+                \"Form factor\": \"ATX\"
+                \"Chipset\": \"AMD B450\"
+                \"Geheugen slots\": \"4 x\"
+                \"Max. Geheugen\": \"64 GB\"
+                \"AMD CrossFire\": \"Ja\"
+                \"M.2 Slot aanwezig\": \"Ja\"
+                \"EAN\": \"4718017080279\"
+                \"Vendorcode\": \"90MB0YS0-M0EAY0\"
+                \"Garantie\": \"36 Maanden\"
+            }",
             'photo' => "https://www.megekko.nl/productimg/233925/midi/1_Asus-ROG-STRIX-B450-F-GAMING-moederbord.jpg",
             'price' => 99.99,
             'category_id' => "3",

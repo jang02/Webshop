@@ -26,15 +26,23 @@
 
                                 <td>
                                     <div class="input-group">
-                                        <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="{{$data_field}}_input"><i class="fas fa-minus"></i></button>
-                                        <input type="text" id="{{$data_field}}_input" name="{{$data_field}}_input" class="form-control input-number" value="{{$amount}}" min="1" max="{{PHP_INT_MAX}}">
-                                        <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="{{$data_field}}_input"><i class="fas fa-plus"></i></button>
+                                        <button type="button" class="btn btn-danger btn-number" data-type="minus"
+                                                data-field="{{$data_field}}_input"><i class="fas fa-minus"></i></button>
+                                        <input type="text" id="{{$data_field}}_input" name="{{$data_field}}_input"
+                                               class="form-control input-number" value="{{$amount}}" min="1"
+                                               max="{{PHP_INT_MAX}}">
+                                        <button type="button" class="btn btn-success btn-number" data-type="plus"
+                                                data-field="{{$data_field}}_input"><i class="fas fa-plus"></i></button>
                                     </div>
                                 </td>
 
                                 @php($total += $product->price * $amount)
-                                <td id="{{$data_field}}_price" price="{{$product->price}}">${{$product->price * $amount}}</td>
-                                <td class="text-center"><button class="btn btn-sm btn-danger btn-number" data-type="delete" data-field="{{$data_field}}"><i class="fa fa-trash"></i></button></td>
+                                <td id="{{$data_field}}_price" price="{{$product->price}}">
+                                    ${{$product->price * $amount}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-danger btn-number" data-type="delete"
+                                            data-field="{{$data_field}}"><i class="fa fa-trash"></i></button>
+                                </td>
                             </tr>
                         @endforeach
                         <tr>
@@ -59,8 +67,16 @@
                 var parent = document.getElementById(element.id.replace(new RegExp("_input", "g"), ""));
                 $("div.spanner").addClass("show");
                 $("div.overlay").addClass("show");
-                console.log("Sending request: " + JSON.stringify({_token: "{{csrf_token()}}", id: parseInt(element.id.split("_")[1]), newVal: newValue}, null, 4));
-                $.post("{{route("cart-set")}}", {_token: "{{csrf_token()}}", id: parseInt(element.id.split("_")[1]), newVal: newValue})
+                console.log("Sending request: " + JSON.stringify({
+                    _token: "{{csrf_token()}}",
+                    id: parseInt(element.id.split("_")[1]),
+                    newVal: newValue
+                }, null, 4));
+                $.post("{{route("cart-set")}}", {
+                    _token: "{{csrf_token()}}",
+                    id: parseInt(element.id.split("_")[1]),
+                    newVal: newValue
+                })
                     .done(function (response) {
                         if (response.response) {
                             console.log(response);
@@ -71,17 +87,18 @@
                                 var price = document.getElementById(parent.id + "_price");
                                 var pricePer = parseFloat($(price).attr("price"));
                                 price.innerText = "$" + (newValue * pricePer).toFixed(2);
-                                var total = document.getElementById("total-price").children[0].children[0];
-                                var totalPrice = 0;
-                                for (let element of document.getElementsByClassName("product")) {
-                                    console.log(element);
-                                    price = document.getElementById(element.id + "_price");
-                                    pricePer = parseFloat($(price).attr("price"));
-                                    var quantity = parseInt(document.getElementById(element.id + "_input").value);
-                                    totalPrice += pricePer * quantity;
-                                }
-                                total.innerText = "$" + totalPrice.toFixed(2);
                             }
+                            var total = document.getElementById("total-price").children[0].children[0];
+                            var totalPrice = 0;
+                            for (let element of document.getElementsByClassName("product")) {
+                                console.log(element);
+                                price = document.getElementById(element.id + "_price");
+                                pricePer = parseFloat($(price).attr("price"));
+                                var quantity = parseInt(document.getElementById(element.id + "_input").value);
+                                totalPrice += pricePer * quantity;
+                            }
+                            total.innerText = "$" + totalPrice.toFixed(2);
+
                         }
                     })
                     .fail(function (response) {
@@ -91,12 +108,13 @@
                     $("div.overlay").removeClass("show");
                 });
             }
-            $(".btn-number").click(function(event) {
+
+            $(".btn-number").click(function (event) {
                 event.preventDefault();
                 var type = $(this).attr("data-type");
                 var field = $(this).attr("data-field");
                 var element = document.getElementById(field);
-                switch(type.toLowerCase()) {
+                switch (type.toLowerCase()) {
                     case "minus":
                         onChange(element, parseInt(element.value) - 1);
                         break;

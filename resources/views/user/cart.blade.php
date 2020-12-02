@@ -48,7 +48,6 @@
                         <tr>
                             <td><a class="btn btn-primary" href="{{route("finalize-order")}}">Order</a></td>
                             <td></td>
-                            <td></td>
                             <td><h5>Total</h5></td>
                             <td class="text-right" id="total-price"><h5><strong>${{$total}}</strong></h5></td>
                         </tr>

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 class cart
 {
     private $items = [];
+    private $price;
 
     public static function getInstance(): Cart
     {
@@ -64,6 +65,23 @@ class cart
         $this->items = [];
     }
 
+    public function getPrice(){
+        return $this->price;
+    }
+
+    public function setPrice($input): void {
+        $this->price = $input;
+    }
+
+    public function calculatePrice($input){
+        $price = 0;
+        foreach($input as $productid => $total){
+            $product = Product::find($productid);
+            $price +=  $product->price * $total;
+        }
+        return $price;
+    }
+
     private function serialize(): array
     {
         return $this->items;
@@ -73,6 +91,7 @@ class cart
     {
         $cart = new Cart();
         $cart->items = $input;
+        $cart->price = $cart->calculatePrice($input);
         return $cart;
     }
 

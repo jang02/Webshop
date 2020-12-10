@@ -8,6 +8,9 @@ use App\Category;
 use App\Product;
 use App\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class UserController
 {
@@ -44,6 +47,30 @@ class UserController
     public function finalizeOrder()
     {
         return view("user.order");
+    }
+
+    public function handleOrder(Request $request){
+        $validator = Validator::make($request->all(), [
+            'firstName' => ['required', 'string', 'max:255'],
+            'lastName' => ['required', 'string', 'max:255'],
+            'country' => ['required', 'string', 'max:255'],
+            'state' => ['required', 'string', 'max:255'],
+            'street' => ['required', 'string', 'max:255'],
+            'number' => ['required', 'string', 'max:255'],
+            'zipcode' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255']
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/order')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        return redirect("/orderlist");
+    }
+
+    public function orderList(){
+        return view("user.cart", ["orders" => DB::table("order_list")->where("userid", Auth::user()->id)]);
     }
 
 

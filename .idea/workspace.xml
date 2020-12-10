@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8912e0d-183d-4a01-9a9f-04729be9ba75" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_09_105227_create_order_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_093835_create_order_items_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/orderlist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_24_155840_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_24_155840_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/order.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,13 +138,16 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1kMus2mh5W2ToLzn9Hu0XoHMMYX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -181,11 +192,18 @@
       <workItem from="1606389090841" duration="754000" />
       <workItem from="1606726392205" duration="77000" />
       <workItem from="1606727463140" duration="3672000" />
+      <workItem from="1607328758556" duration="2012000" />
+      <workItem from="1607348300358" duration="181000" />
+      <workItem from="1607507004807" duration="4794000" />
+      <workItem from="1607590028430" duration="5474000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606131780736">
@@ -200,18 +218,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606726467783" />
-    <state x="742" y="335" key="NewPhpClassDialog" timestamp="1606217535940">
+    <state x="742" y="335" key="NewPhpClassDialog" timestamp="1607510420818">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="742" y="335" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606217535940" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1606308131844">
+    <state x="742" y="335" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607510420818" />
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1607510426465">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606308131844" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1606726397317">
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607510426465" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1607590034396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606726397317" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607590034396" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606307384490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

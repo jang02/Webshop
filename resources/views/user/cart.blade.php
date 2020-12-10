@@ -50,6 +50,7 @@
                             <td></td>
                             <td><h5>Total</h5></td>
                             <td class="text-right" id="total-price"><h5><strong>${{$total}}</strong></h5></td>
+                            @php(\App\Cart::getInstance()->setPrice($total))
                         </tr>
                         </tbody>
                     </table>

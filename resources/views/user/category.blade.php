@@ -15,11 +15,8 @@
                                 <a href="{{route("show-product", $product)}}">
                                     <img src="{{$product->photo}}" alt="?">
                                 </a>
-                                <div style="display: inline-block;">
-                                    <p>Descriptie:</p>
-                                    <p>{{$product->description}}</p>
 
-                                </div>
+                                <a class="btn-primary btn" href="{{route("show-product", $product)}}">Bekijk product</a>
 
                             </div>
                         </div>

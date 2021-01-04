@@ -109,7 +109,7 @@
                             @endif
 
                             <li><a href="{{route("show-cart")}}">Cart</a></li>
-                            <li><a href="">Order lijst</a></li>
+                            <li><a href="{{route("orderList")}}">Order lijst</a></li>
 
                             <li class="active">
                                 <a href="#categoriesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categorieën</a>

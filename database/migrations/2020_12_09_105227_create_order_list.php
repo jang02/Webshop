@@ -14,7 +14,8 @@ class CreateOrderList extends Migration
     public function up()
     {
         Schema::create('orders_list', function (Blueprint $table) {
-            $table->increments("orderid");
+            $table->id();
+            $table->string("orderid");
             $table->string("userid");
             $table->string("firstname");
             $table->string("lastname");
@@ -25,7 +26,6 @@ class CreateOrderList extends Migration
             $table->string("zipcode");
             $table->string("city");
             $table->decimal("price");
-            $table->id();
             $table->timestamps();
         });
     }

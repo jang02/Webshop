@@ -27,7 +27,7 @@ Route::get('/cart', 'UserController@showCart')->name('show-cart');
 Route::post("/cart/set", ["before" => "csrf", "uses" => "UserController@setCart"])->name("cart-set");
 Route::get('/order', "UserController@finalizeOrder")->name("finalize-order");
 Route::get('/orderlist', "UserController@orderList")->name("orderList");
-Route::post("/order/order", "UserController@handleOrder")->name("handle-order");
+Route::post("/order/handleorder", "UserController@handleOrder")->name("handle-order");
 
 Route::group(['middleware' => 'App\Http\Middleware\isAdmin'], function() {
     Route::get('/adminpanel', 'AdminController@panel')->name('adminpanel');

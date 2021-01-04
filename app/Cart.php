@@ -63,6 +63,8 @@ class cart
     public function clearCart()
     {
         $this->items = [];
+        $this->setPrice(0);
+        $this->saveSession();
     }
 
     public function getPrice(){

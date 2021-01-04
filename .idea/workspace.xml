@@ -3,18 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e8912e0d-183d-4a01-9a9f-04729be9ba75" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_09_105227_create_order_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_09_105227_create_order_list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_10_093835_create_order_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_10_093835_create_order_items_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/ProductSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProductSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/orderlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/orderlist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +191,7 @@
       <workItem from="1607507004807" duration="4794000" />
       <workItem from="1607590028430" duration="5652000" />
       <workItem from="1608225623588" duration="16000" />
-      <workItem from="1609748259836" duration="10882000" />
+      <workItem from="1609748259836" duration="16382000" />
     </task>
     <servers />
   </component>

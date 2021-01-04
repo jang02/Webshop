@@ -26,6 +26,7 @@ class CreateOrderList extends Migration
             $table->string("zipcode");
             $table->string("city");
             $table->decimal("price");
+            $table->string('status')->default('unconfirmed');
             $table->timestamps();
         });
     }
